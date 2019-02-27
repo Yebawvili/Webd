@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function numToObject(num) {
+            var arrNumber = num.split('');
+            while (arrNumber.length < 3) {
+                arrNumber.unshift(0);
+            }
+            var number = {};
+            if (arrNumber.length > 3) {
+                return null;
+            } else {
+                number['сотни'] = +arrNumber[0];
+                number['десятки'] = +arrNumber[1];
+                number['единицы'] = +arrNumber[2];
+                return number;
+            }
+        }
+        var number = prompt("Число");
+        var obj = numToObject(number);
+        if (obj == null) {
+            console.log("Число больше 999");
+
+        } else {
+            console.log(obj);
+        }
+
+    </script>
+
+    <script>
+        var object = {
+            Name: 'Подушка',
+            prise: 200,
+            count: 3,
+        }
+        var object1 = {
+            Name: 'Матрас',
+            prise: 400,
+            count: 2,
+        }
+        var object2 = {
+            Name: 'Одеяло',
+            prise: 500,
+            count: 4,
+        }
+        var sumObject = object.prise * object.count;
+        var sumObject1 = object1.prise * object1.count;
+        var sumObject2 = object2.prise * object2.count;
+        var total = sumObject + sumObject1 + sumObject2;
+        console.log(total);
+
+    </script>
+</body>
+
+</html>
